@@ -1,0 +1,171 @@
+[
+  {
+    "ticket_id": "VAL-0001",
+    "channel": "forum",
+    "subject": "Need to rotate an exposed key",
+    "body": "One of our production keys started returning 401 at around yesterday morning without any change on our side. Other keys against the same account are still working.",
+    "received_at": "2026-03-02T08:32:00Z",
+    "customer_id": "CUST-1215",
+    "customer_name": "Dilnoza Karimova",
+    "customer_tier": "business",
+    "customer_region": "asia_pacific",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "api_key_issue",
+      "urgency": "medium",
+      "expected_route": "auto_respond",
+      "answerable_from_docs": true,
+      "expected_doc_ids": [
+        "DOC-AUTH-004"
+      ],
+      "must_not_auto_respond": false
+    },
+    "history": {
+      "first_contact_resolution": true,
+      "resolution_time_minutes": 52,
+      "csat_rating": 4,
+      "escalated": false,
+      "repeat_contact": false
+    }
+  },
+  {
+    "ticket_id": "VAL-0002",
+    "channel": "chat",
+    "subject": "",
+    "body": "Following up on my previous message. Any update?",
+    "received_at": "2026-03-12T18:15:00Z",
+    "customer_id": "CUST-1252",
+    "customer_name": "Priya Brooks",
+    "customer_tier": "standard",
+    "customer_region": "north_america",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "unclear_request",
+      "urgency": "high",
+      "expected_route": "escalate",
+      "answerable_from_docs": false,
+      "expected_doc_ids": [],
+      "must_not_auto_respond": true
+    },
+    "history": {
+      "first_contact_resolution": false,
+      "resolution_time_minutes": 543,
+      "csat_rating": 1,
+      "escalated": true,
+      "repeat_contact": false
+    }
+  },
+  {
+    "ticket_id": "VAL-0003",
+    "channel": "docs_comment",
+    "subject": "It is not working",
+    "body": "nothing is loading properly today. Can someone look into this? kindly check and revert.",
+    "received_at": "2026-04-17T12:48:00Z",
+    "customer_id": "CUST-1128",
+    "customer_name": "Caleb Karimova",
+    "customer_tier": "standard",
+    "customer_region": "europe",
+    "language_fluency": "non_fluent",
+    "labels": {
+      "intent": "unclear_request",
+      "urgency": "medium",
+      "expected_route": "escalate",
+      "answerable_from_docs": false,
+      "expected_doc_ids": [],
+      "must_not_auto_respond": true
+    },
+    "history": {
+      "first_contact_resolution": false,
+      "resolution_time_minutes": 1077,
+      "csat_rating": 2,
+      "escalated": true,
+      "repeat_contact": true
+    }
+  },
+  {
+    "ticket_id": "VAL-0004",
+    "channel": "email",
+    "subject": "MFA code keeps getting rejected",
+    "body": "my authenticator app codes are being rejected every time. i am having tried generating new ones several times.",
+    "received_at": "2026-04-20T06:36:00Z",
+    "customer_id": "CUST-1114",
+    "customer_name": "Quentin Kamau",
+    "customer_tier": "business",
+    "customer_region": "north_america",
+    "language_fluency": "non_fluent",
+    "labels": {
+      "intent": "authentication_failure",
+      "urgency": "medium",
+      "expected_route": "escalate",
+      "answerable_from_docs": false,
+      "expected_doc_ids": [],
+      "must_not_auto_respond": false
+    },
+    "history": {
+      "first_contact_resolution": false,
+      "resolution_time_minutes": 1133,
+      "csat_rating": 1,
+      "escalated": true,
+      "repeat_contact": false
+    }
+  },
+  {
+    "ticket_id": "VAL-0005",
+    "channel": "chat",
+    "subject": "",
+    "body": "Our cursor seems to stop working partway through a long iteration. Is there an expiry we should be handling?",
+    "received_at": "2026-04-24T12:07:00Z",
+    "customer_id": "CUST-1192",
+    "customer_name": "Chen Ferreira",
+    "customer_tier": "standard",
+    "customer_region": "asia_pacific",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "api_usage_question",
+      "urgency": "low",
+      "expected_route": "auto_respond",
+      "answerable_from_docs": true,
+      "expected_doc_ids": [
+        "DOC-API-002"
+      ],
+      "must_not_auto_respond": false
+    },
+    "history": {
+      "first_contact_resolution": true,
+      "resolution_time_minutes": 24,
+      "csat_rating": 4,
+      "escalated": false,
+      "repeat_contact": false
+    }
+  },
+  {
+    "ticket_id": "VAL-0006",
+    "channel": "email",
+    "subject": "MFA code keeps getting rejected",
+    "body": "I have been trying to sign in for the last two hours and keep getting an invalid credentials message. I am certain the password is correct because I use a password manager. Nothing has changed at our end that I am aware of.",
+    "received_at": "2026-04-01T13:12:00Z",
+    "customer_id": "CUST-1215",
+    "customer_name": "Sanjay Brooks",
+    "customer_tier": "standard",
+    "customer_region": "asia_pacific",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "authentication_failure",
+      "urgency": "medium",
+      "expected_route": "auto_respond",
+      "answerable_from_docs": true,
+      "expected_doc_ids": [
+        "DOC-AUTH-001",
+        "DOC-AUTH-002"
+      ],
+      "must_not_auto_respond": false
+    },
+    "history": {
+      "first_contact_resolution": true,
+      "resolution_time_minutes": 37,
+      "csat_rating": 4,
+      "escalated": false,
+      "repeat_contact": false
+    }
+  }
+]
