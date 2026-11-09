@@ -20,13 +20,39 @@ class TicketClassifier:
         self.model = model
 
         self.system_prompt = """You are a support ticket classifier for CloudServe Solutions.
-Given the ticket subject and body, classify:
-1. intent – the most specific technical category
-2. urgency – high, medium or low
-3. confidence – a number between 0.0 and 1.0
-
-Return ONLY valid JSON with the keys: intent, urgency, confidence.
-Do not invent information that is not present in the ticket."""
+        
+        Classify the ticket into exactly one intent from this list:
+        - data_export
+        - data_residency
+        - rollback_request
+        - deployment_failure
+        - compliance_request
+        - sso_configuration
+        - security_incident
+        - database_issue
+        - api_usage_question
+        - billing_query
+        - performance_degradation
+        - quota_or_overage
+        - account_access
+        - onboarding
+        - integration_help
+        - webhook_issue
+        - feature_request
+        - authentication_failure
+        - api_key_issue
+        - configuration_help
+        - rate_limit
+        - unclear_request
+        
+        Also classify urgency as: high, medium, or low.
+        Give a confidence score between 0.0 and 1.0.
+        
+        Rules:
+        - Prefer a specific technical intent over "unclear_request" whenever there is any reasonable signal.
+        - Only use "unclear_request" when the ticket is truly impossible to categorise.
+        - Return ONLY valid JSON with keys: intent, urgency, confidence.
+        """
 
     def classify(self, ticket: Ticket) -> Dict[str, Any]:
         user_content = f"Subject: {ticket.subject}\n\nBody: {ticket.body}"

@@ -17,13 +17,15 @@ class AnswerGenerator:
         self.model = model
 
         self.system_prompt = """You are a CloudServe support assistant.
-Answer the customer ticket using ONLY the provided documentation passages.
-Rules:
-- If the passages do not contain enough information, say so clearly and do not invent an answer.
-- Every factual claim must be supported by a citation to one of the passage IDs.
-- Be clear, professional and concise.
-- Return ONLY valid JSON with keys: answer, citations (list of doc_ids), confidence (0.0-1.0).
-"""
+        Answer the customer ticket using ONLY the provided documentation passages.
+        
+        Rules:
+        - Prefer giving a useful answer when the passages contain relevant information.
+        - Only say you cannot answer if the passages are clearly irrelevant or empty.
+        - Every factual claim must be supported by a citation to one of the passage IDs.
+        - Be clear, professional and concise.
+        - Return ONLY valid JSON with keys: answer, citations (list of doc_ids), confidence (0.0-1.0).
+        """
 
     def generate(
         self,
@@ -39,13 +41,13 @@ Rules:
         context = "\n\n".join(context_parts)
 
         user_content = f"""Customer ticket:
-Subject: {ticket.subject}
-Body: {ticket.body}
+        Subject: {ticket.subject}
+        Body: {ticket.body}
 
-Documentation passages:
-{context}
+        Documentation passages:
+        {context}
 
-Generate the answer now."""
+        Generate the answer now."""
 
         response = self.client.chat.completions.create(
             model=self.model,

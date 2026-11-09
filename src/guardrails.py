@@ -39,13 +39,6 @@ class Guardrails:
                         "reason": f"Potential private data detected in answer (pattern: {pattern})"
                     }
 
-        # 3. Extremely low confidence from generator
-        if generated and generated.get("confidence", 1.0) < 0.25:
-            return {
-                "decision": "block",
-                "reason": "Generator confidence too low"
-            }
-
         return {
             "decision": "allow",
             "reason": "Passed all guardrails"

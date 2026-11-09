@@ -167,5 +167,120 @@
       "escalated": false,
       "repeat_contact": false
     }
+  },
+  {
+    "ticket_id": "VAL-0007",
+    "channel": "chat",
+    "subject": "",
+    "body": "We have a problem and need someone to call us urgently.",
+    "received_at": "2026-04-17T23:56:00Z",
+    "customer_id": "CUST-1191",
+    "customer_name": "Tomas Dubois",
+    "customer_tier": "business",
+    "customer_region": "latin_america",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "unclear_request",
+      "urgency": "high",
+      "expected_route": "escalate",
+      "answerable_from_docs": false,
+      "expected_doc_ids": [],
+      "must_not_auto_respond": true
+    },
+    "history": {
+      "first_contact_resolution": false,
+      "resolution_time_minutes": 972,
+      "csat_rating": 3,
+      "escalated": true,
+      "repeat_contact": false
+    }
+  },
+  {
+    "ticket_id": "VAL-0008",
+    "channel": "chat",
+    "subject": "",
+    "body": "We are tightening permissions after a review and I want to understand how group membership interacts with directly assigned roles.",
+    "received_at": "2026-03-17T16:29:00Z",
+    "customer_id": "CUST-1126",
+    "customer_name": "Chen Brooks",
+    "customer_tier": "standard",
+    "customer_region": "asia_pacific",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "account_access",
+      "urgency": "high",
+      "expected_route": "auto_respond",
+      "answerable_from_docs": true,
+      "expected_doc_ids": [
+        "DOC-ACCT-001"
+      ],
+      "must_not_auto_respond": false
+    },
+    "history": {
+      "first_contact_resolution": true,
+      "resolution_time_minutes": 37,
+      "csat_rating": 1,
+      "escalated": false,
+      "repeat_contact": false
+    }
+  },
+  {
+    "ticket_id": "VAL-0009",
+    "channel": "docs_comment",
+    "subject": "Retention period question",
+    "body": "We need to demonstrate that read access to customer records is logged. I cannot find these events in the audit log.",
+    "received_at": "2026-05-10T23:59:00Z",
+    "customer_id": "CUST-1079",
+    "customer_name": "Hiroshi Rahman",
+    "customer_tier": "standard",
+    "customer_region": "europe",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "compliance_request",
+      "urgency": "low",
+      "expected_route": "escalate",
+      "answerable_from_docs": true,
+      "expected_doc_ids": [
+        "DOC-SEC-003"
+      ],
+      "must_not_auto_respond": true
+    },
+    "history": {
+      "first_contact_resolution": false,
+      "resolution_time_minutes": 458,
+      "csat_rating": 5,
+      "escalated": true,
+      "repeat_contact": false
+    }
+  },
+  {
+    "ticket_id": "VAL-0010",
+    "channel": "docs_comment",
+    "subject": "Invoice higher than expected",
+    "body": "Our invoice this month is considerably higher than usual and I cannot see why from the summary. Could you help me understand what has driven the increase?",
+    "received_at": "2026-05-12T17:01:00Z",
+    "customer_id": "CUST-1209",
+    "customer_name": "Farid Brooks",
+    "customer_tier": "business",
+    "customer_region": "europe",
+    "language_fluency": "fluent",
+    "labels": {
+      "intent": "billing_query",
+      "urgency": "high",
+      "expected_route": "auto_respond",
+      "answerable_from_docs": true,
+      "expected_doc_ids": [
+        "DOC-BILL-001",
+        "DOC-BILL-002"
+      ],
+      "must_not_auto_respond": false
+    },
+    "history": {
+      "first_contact_resolution": false,
+      "resolution_time_minutes": 1042,
+      "csat_rating": 4,
+      "escalated": true,
+      "repeat_contact": false
+    }
   }
 ]
