@@ -1,3 +1,4 @@
+import os
 from typing import List, Dict, Any
 from src.models import Ticket
 from src.classifier import TicketClassifier
@@ -19,6 +20,28 @@ class SupportPipeline:
         self.logger = DecisionLogger()
 
     def process_ticket(self, ticket: Ticket) -> Dict[str, Any]:
+        # Check for kill switch
+        if os.getenv("AUTO_RESPOND", "true").lower() == "false":
+                    final_decision = "escalate"
+                    reason = "Kill switch active (AUTO_RESPOND=false)"
+                    self.logger.log(
+                        ticket=ticket,
+                        classification={"intent": None, "urgency": None, "confidence": None},
+                        retrieved_docs=[],
+                        route_decision={"decision": "escalate", "reason": reason},
+                        generation=None,
+                        guardrail={"decision": "allow", "reason": "Kill switch – no generation"},
+                        final_decision=final_decision
+                    )
+                    return {
+                        "ticket_id": ticket.ticket_id,
+                        "final_decision": final_decision,
+                        "intent": None,
+                        "confidence": None,
+                        "citations": [],
+                        "reason": reason
+                    }
+        
         # 1. Classify
         classification = self.classifier.classify(ticket)
         ticket.predicted_intent = classification.get("intent")
