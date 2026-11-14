@@ -1,9 +1,0 @@
-requirements changes
-openai>=1.10.0,<2.0.0
-pydantic>=2.4.2
-langchain>=0.1.0
-langgraph==0.0.20
-langchain-community>=0.0.10
-pip install --upgrade chromadb
-pip install "packaging==23.2"
-pip install --upgrade sentence-transformers huggingface_hub
