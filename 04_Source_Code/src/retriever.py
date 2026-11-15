@@ -1,19 +1,19 @@
 import json
 from pathlib import Path
 from typing import List, Dict, Any, Optional
-
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
+from src.config import EMBEDDING_MODEL, CHROMA_PATH, RETRIEVAL_TOP_K
 
 
 class DocumentRetriever:
     def __init__(
         self,
         docs_path: str = "data/documentation.json",
-        persist_directory: str = "chroma_db",
+        persist_directory: str = CHROMA_PATH,
         collection_name: str = "cloudserve_docs",
-        embedding_model_name: str = "all-MiniLM-L6-v2",
+        embedding_model_name: str = EMBEDDING_MODEL,
     ):
         self.docs_path = Path(docs_path)
         self.persist_directory = persist_directory
@@ -106,7 +106,7 @@ class DocumentRetriever:
         )
         print(f"Indexed {len(all_chunks)} chunks into Chroma.")
 
-    def retrieve(self, query: str, top_k: int = 4) -> List[Dict[str, Any]]:
+    def retrieve(self, query: str, top_k: int = RETRIEVAL_TOP_K) -> List[Dict[str, Any]]:
         """
         Retrieve the most relevant passages for a query.
         Returns list of dicts with: text, doc_id, title, category, distance

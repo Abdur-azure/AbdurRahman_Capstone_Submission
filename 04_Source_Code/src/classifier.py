@@ -4,17 +4,18 @@ from typing import Dict, Any
 from openai import OpenAI
 from dotenv import load_dotenv
 from src.models import Ticket
+from src.config import require_api_key, MODEL_NAME
 
 load_dotenv()
 
 class TicketClassifier:
-    def __init__(self, model: str = "openai/gpt-oss-20b"):
+    def __init__(self, model: str = MODEL_NAME):
         """
         Uses Groq (or OpenRouter) free-tier model.
         Change model name if you are using a different free model.
         """
         self.client = OpenAI(
-            api_key=os.getenv("GROQ_API_KEY"),          # or OPENROUTER_API_KEY
+            api_key=require_api_key(),          # or OPENROUTER_API_KEY
             base_url="https://api.groq.com/openai/v1"  # change for OpenRouter
         )
         self.model = model

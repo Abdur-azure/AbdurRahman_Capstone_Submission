@@ -1,14 +1,15 @@
 from typing import Dict, Any, List
 from src.models import Ticket
+from src.config import CONFIDENCE_THRESHOLD
 
 
 class Router:
-    def __init__(self, confidence_threshold: float = 0.65):
+    def __init__(self, confidence_threshold: float = None):
         """
         confidence_threshold: below this value we escalate.
         You can tune this later during evaluation.
         """
-        self.confidence_threshold = confidence_threshold
+        self.confidence_threshold = confidence_threshold if confidence_threshold is not None else CONFIDENCE_THRESHOLD
 
     def decide(
         self,

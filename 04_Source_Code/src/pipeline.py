@@ -7,21 +7,21 @@ from src.router import Router
 from src.generator import AnswerGenerator
 from src.guardrails import Guardrails
 from src.decision_logger import DecisionLogger
-
+from src.config import AUTO_RESPOND, CONFIDENCE_THRESHOLD
 
 class SupportPipeline:
-    def __init__(self, confidence_threshold: float = 0.65):
+    def __init__(self, confidence_threshold: float = None):
         self.classifier = TicketClassifier()
         self.retriever = DocumentRetriever()
         self.retriever.build_index()
-        self.router = Router(confidence_threshold=confidence_threshold)
+        self.router = Router(confidence_threshold=confidence_threshold if confidence_threshold is not None else CONFIDENCE_THRESHOLD)
         self.generator = AnswerGenerator()
         self.guardrails = Guardrails()
         self.logger = DecisionLogger()
 
     def process_ticket(self, ticket: Ticket) -> Dict[str, Any]:
         # Check for kill switch
-        if os.getenv("AUTO_RESPOND", "true").lower() == "false":
+        if not AUTO_RESPOND:
                     final_decision = "escalate"
                     reason = "Kill switch active (AUTO_RESPOND=false)"
                     self.logger.log(

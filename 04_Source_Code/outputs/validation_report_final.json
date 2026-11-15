@@ -2,55 +2,54 @@
   "input_file": "data/validation_tickets.json",
   "total_tickets": 80,
   "decisions": {
-    "escalate": 27,
+    "escalate": 13,
     "block": 14,
-    "answer": 39
+    "answer": 53
   },
-  "answer_rate": 0.4875,
-  "escalate_rate": 0.3375,
+  "answer_rate": 0.6625,
+  "escalate_rate": 0.1625,
   "block_rate": 0.175,
   "error_rate": 0.0,
   "by_customer_tier": {
     "business": {
-      "escalate": 12,
-      "answer": 16,
+      "escalate": 7,
+      "answer": 21,
       "block": 2
     },
     "standard": {
       "block": 11,
-      "escalate": 10,
-      "answer": 21
+      "answer": 25,
+      "escalate": 6
     },
     "enterprise": {
-      "answer": 2,
-      "escalate": 5,
+      "answer": 7,
       "block": 1
     }
   },
   "by_language_fluency": {
     "fluent": {
-      "escalate": 18,
+      "escalate": 7,
       "block": 11,
-      "answer": 32
+      "answer": 43
     },
     "non_fluent": {
       "block": 3,
-      "answer": 7,
-      "escalate": 9
+      "answer": 10,
+      "escalate": 6
     }
   },
   "business_outcomes": {
-    "answer_rate_as_fcr_proxy": 0.4875,
-    "escalation_rate": 0.3375,
+    "answer_rate_as_fcr_proxy": 0.6625,
+    "escalation_rate": 0.1625,
     "block_rate": 0.175,
     "baseline_fcr_for_reference": 0.42,
     "target_fcr": 0.6
   },
   "technical_performance": {
-    "intent_accuracy_vs_labels": 0.5875,
+    "intent_accuracy_vs_labels": 0.8,
     "labelled_tickets": 80,
-    "citation_coverage_on_answered": 0.9230769230769231,
-    "answered_tickets": 39
+    "citation_coverage_on_answered": 0.9433962264150944,
+    "answered_tickets": 53
   },
   "governance": {
     "decision_log_entries": 80,
