@@ -1,3 +1,13 @@
+# PSEUDOCODE
+# ----------
+# 1. Define TicketLabels (intent, urgency, flags, expected docs).
+# 2. Define TicketHistory (FCR, CSAT, escalated, etc.).
+# 3. Define Ticket:
+#    - identity + channel + text + customer info
+#    - labels + history
+#    - empty fields for later predictions (intent, confidence, answer, citations, route)
+# 4. Provide to_dict() so a ticket can be saved or logged easily.
+
 from dataclasses import dataclass, field
 from typing import Optional, List, Dict, Any
 from datetime import datetime

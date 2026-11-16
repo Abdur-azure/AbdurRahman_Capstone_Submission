@@ -1,3 +1,13 @@
+# PSEUDOCODE
+# ----------
+# 1. On init: store confidence threshold (from config or argument).
+# 2. decide(ticket, classification, retrieved_docs):
+#    - If must_not_auto_respond flag is true -> block
+#    - If no docs retrieved -> escalate
+#    - If confidence < threshold -> escalate
+#    - Otherwise -> answer
+# 3. Return {decision, reason}.
+
 from typing import Dict, Any, List
 from src.models import Ticket
 from src.config import CONFIDENCE_THRESHOLD

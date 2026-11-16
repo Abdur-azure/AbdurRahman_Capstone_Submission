@@ -1,3 +1,13 @@
+# PSEUDOCODE
+# ----------
+# 1. Open a tickets JSON file.
+# 2. For each raw ticket:
+#    - Read labels into TicketLabels
+#    - Read history into TicketHistory
+#    - Build one normalised Ticket object
+# 3. Return the list of Ticket objects.
+# 4. Helper: count how many tickets per channel (for quick checks).
+
 import json
 from pathlib import Path
 from typing import List, Union

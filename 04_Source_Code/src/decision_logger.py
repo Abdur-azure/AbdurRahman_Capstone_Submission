@@ -1,3 +1,13 @@
+# PSEUDOCODE
+# ----------
+# 1. On init: set path to logs/decisions.jsonl (create folder if needed).
+# 2. log(ticket, classification, retrieved_docs, route, generation, guardrail, final_decision):
+#    - Build one record with timestamp, ticket id, classification, doc ids,
+#      route, answer preview, citations, guardrail, final decision
+#    - Append that record as a single JSON line to the log file
+# 3. count():
+#    - Return how many lines (decisions) are in the log file
+
 import json
 from datetime import datetime, timezone
 from pathlib import Path

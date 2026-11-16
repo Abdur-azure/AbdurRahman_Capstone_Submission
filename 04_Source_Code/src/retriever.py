@@ -1,3 +1,16 @@
+# PSEUDOCODE
+# ----------
+# 1. On init: load embedding model + open/create Chroma collection.
+# 2. build_index():
+#    - Load all knowledge-base articles
+#    - Split each article into smaller chunks
+#    - Embed chunks and store them in Chroma (with doc_id, title)
+# 3. retrieve(query):
+#    - Embed the query
+#    - Search Chroma for the top-k nearest chunks
+#    - Return list of {text, doc_id, title, distance}
+# 4. If index is empty, build it first (or raise a clear error).
+
 import json
 from pathlib import Path
 from typing import List, Dict, Any, Optional

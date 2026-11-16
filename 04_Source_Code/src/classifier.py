@@ -1,3 +1,14 @@
+# PSEUDOCODE
+# ----------
+# 1. On init: create LLM client using API key + model from config.
+# 2. classify(ticket):
+#    - Build a short prompt from ticket subject + body
+#    - Ask the model for intent, urgency, confidence
+#    - Parse the JSON reply
+#    - Clamp confidence to 0..1; default urgency if invalid
+#    - On bad JSON: return a safe fallback (unclear_request, medium, low confidence)
+# 3. Return {intent, urgency, confidence}.
+
 import os
 import json
 from typing import Dict, Any

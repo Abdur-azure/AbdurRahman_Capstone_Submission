@@ -1,3 +1,13 @@
+# PSEUDOCODE
+# ----------
+# 1. Load the .env file once.
+# 2. Read settings:
+#    - API key, model name, embedding model
+#    - confidence threshold, retrieval top-k
+#    - AUTO_RESPOND (kill switch), chroma path
+# 3. Export these as constants for the rest of the app.
+# 4. provide require_api_key() -> raises error if key is missing.
+
 import os
 from dotenv import load_dotenv
 

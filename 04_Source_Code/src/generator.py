@@ -1,3 +1,15 @@
+# PSEUDOCODE
+# ----------
+# 1. On init: create LLM client using API key + model from config.
+# 2. generate(ticket, retrieved_docs):
+#    - Build context text from the retrieved passages (include doc_ids)
+#    - Ask the model to answer ONLY from that context
+#    - Require JSON: {answer, citations, confidence}
+#    - Parse JSON; on failure return a safe "please escalate" message
+#    - Keep only citations that match real retrieved doc_ids
+#    - Clamp confidence to 0..1
+# 3. Return {answer, citations, confidence}.
+
 import os
 import json
 from typing import List, Dict, Any

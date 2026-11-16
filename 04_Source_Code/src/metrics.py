@@ -1,3 +1,14 @@
+# PSEUDOCODE
+# ----------
+# 1. build_report(tickets, results, input_file):
+#    - Count final decisions: answer / escalate / block / error
+#    - Compute rates (answer_rate, escalate_rate, etc.)
+#    - Segment the same counts by customer_tier and language_fluency
+#    - Compare predicted intent to gold labels -> intent accuracy
+#    - Measure how often answered tickets have citations
+#    - Build business, technical, and governance summary blocks
+# 2. Return one dictionary ready to write as JSON.
+
 from collections import defaultdict, Counter
 from typing import List, Dict, Any
 

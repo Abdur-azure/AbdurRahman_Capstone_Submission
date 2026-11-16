@@ -1,3 +1,20 @@
+# PSEUDOCODE
+# ----------
+# 1. On init: create classifier, retriever, router, generator, guardrails, logger.
+# 2. process_ticket(ticket):
+#    - If AUTO_RESPOND is false -> force escalate, log, return
+#    - Classify ticket -> intent, urgency, confidence
+#    - Retrieve top docs for the ticket text
+#    - Route: answer / escalate / block
+#    - If route is answer -> generate grounded reply + citations
+#    - Run guardrails on the result
+#    - Set final decision (block wins over answer)
+#    - Log the full decision chain
+#    - Return a short result summary
+# 3. process_batch(tickets):
+#    - Call process_ticket for each ticket
+#    - Collect results; continue on single-ticket errors
+
 import os
 from typing import List, Dict, Any
 from src.models import Ticket

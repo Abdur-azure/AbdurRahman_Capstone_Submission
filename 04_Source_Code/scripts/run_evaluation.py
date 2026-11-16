@@ -1,3 +1,13 @@
+# PSEUDOCODE
+# ----------
+# 1. Parse CLI args: --input, --output, --threshold (optional).
+# 2. Load all tickets from the input JSON file.
+# 3. Create SupportPipeline (uses config threshold if not overridden).
+# 4. process_batch(tickets) -> list of per-ticket results.
+# 5. build_report(tickets, results, input_file) -> metrics dict.
+# 6. Write the metrics dict to the output JSON path.
+# 7. Print a short summary and the decision-log path.
+
 import argparse
 import json
 from pathlib import Path

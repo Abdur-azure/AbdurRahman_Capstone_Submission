@@ -1,3 +1,12 @@
+# PSEUDOCODE
+# ----------
+# 1. check(ticket, generated_answer=None):
+#    - If ticket.must_not_auto_respond is true -> block
+#    - If generated answer looks like it contains private data / secrets -> block
+#    - (Optional) If generator confidence is extremely low -> block
+#    - Otherwise -> allow
+# 2. Return {decision: allow|block, reason}.
+
 import re
 from typing import Dict, Any, List
 from src.models import Ticket
