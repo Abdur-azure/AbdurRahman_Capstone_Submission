@@ -28,12 +28,18 @@ This project builds a production-style customer support automation system that c
 3. Install dependencies:
 
     ```bash
+    python -m pip install --upgrade pip
     pip install -r requirements.txt
     ```
 
 4. Create a .env file in the root and add your API key:
 
-    ```text
+    ```bash
+    # Windows
+    copy .env.example .env
+    # macOS / Linux
+    cp .env.example .env
+
     GROQ_API_KEY=your_key_here(or OPENROUTER_API_KEY=...)
     ```
 
@@ -53,10 +59,8 @@ This project builds a production-style customer support automation system that c
 1. Single unattended command (Acceptance Criteria A9/A10):
 
     ```bash
-    python -m scripts.run_evaluation \
-    --input data/validation_tickets.json \
-    --output outputs/validation_report.json \
-    --threshold 0.65
+    python -m scripts.run_evaluation --input data/validation_tickets.json --output outputs/validation_report.json 
+    --threshold 0.65 ##optional
     ```
 
 - Writes a metrics report to the given output path
