@@ -1,0 +1,46 @@
+{
+  "input_file": "data/validation_tickets_test.json",
+  "total_tickets": 3,
+  "decisions": {
+    "answer": 2,
+    "block": 1
+  },
+  "answer_rate": 0.6666666666666666,
+  "escalate_rate": 0.0,
+  "block_rate": 0.3333333333333333,
+  "error_rate": 0.0,
+  "by_customer_tier": {
+    "business": {
+      "answer": 1
+    },
+    "standard": {
+      "block": 1,
+      "answer": 1
+    }
+  },
+  "by_language_fluency": {
+    "fluent": {
+      "answer": 2,
+      "block": 1
+    }
+  },
+  "business_outcomes": {
+    "answer_rate_as_fcr_proxy": 0.6666666666666666,
+    "escalation_rate": 0.0,
+    "block_rate": 0.3333333333333333,
+    "baseline_fcr_for_reference": 0.42,
+    "target_fcr": 0.6
+  },
+  "technical_performance": {
+    "intent_accuracy_vs_labels": 0.6666666666666666,
+    "labelled_tickets": 3,
+    "citation_coverage_on_answered": 1.0,
+    "answered_tickets": 2
+  },
+  "governance": {
+    "decision_log_entries": 3,
+    "log_reconciles_with_tickets": true,
+    "kill_switch_available": true
+  },
+  "notes": "Expanded metrics aligned with Evaluation Framework (Tier 1\u20133 proxies)"
+}
